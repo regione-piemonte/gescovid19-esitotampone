@@ -1,0 +1,133 @@
+<!doctype html>
+<html  {$html_attrs}>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {$pagetitle}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="{$projectPath}">
+    <link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+    {BEGIN rtlCSS}
+      <link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+    {END rtlCSS}
+    {BEGIN styleCSSFiles}
+      <link REL="stylesheet" href="{$stylepath}" type="text/css">
+    {END styleCSSFiles}
+  </head>
+  <BODY class="{$stylename} function-search" {$bodyattrs}>
+    {BEGIN body}
+      {$header}
+      <style>
+        {$containerCss}
+      </style>
+      {$locking}
+      <DIV class="r-small-page" data-body-align="center" data-body-width="standard">
+        {BEGIN top_block}
+          <DIV class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}" data-v-width="6" data-v-margin="1">
+            <DIV class="row">
+              <DIV data-cellId="top_c1" data-pageid="{$pageid}" {$cell_top_c1} class="r-ori-vert col-md-12">
+                <h2 data-itemtype="search_header" data-itemid="search_header" {$item_search_header} data-pageid="{$pageid}" >
+                  {$pagetitlelabel nome_schema_tampone_tutti_ro search}
+                </h2>
+              </div>
+            </div>
+          </div>
+        {END top_block}
+        {BEGIN above-grid_block}
+          <DIV class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}" data-v-width="6" data-v-margin="1">
+            <DIV class="row">
+              <DIV data-cellId="above-grid_c1" data-pageid="{$pageid}" {$cell_above-grid_c1} class="r-ori-vert col-md-12">
+                <span data-itemtype="text" data-itemid="text" {$item_text} data-pageid="{$pageid}" data-page="tampone_tutti_ro_search" data-small >
+                  Digitare almeno il campo COGNOME
+                </span>
+              </div>
+            </div>
+          </div>
+        {END above-grid_block}
+        {BEGIN grid_block}
+          <TABLE data-body-align="center" data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" class="r-edit-form" cellpadding="0" cellspacing="0" {$grid_hiddenattr} data-form-width="1" data-v-width="6">
+            <tbody>
+              <tr>
+                {BEGIN cellblock_grid_c3}
+                  <TD {$cell_grid_c3} class="r-ori-vert" data-fullwidth data-cellId="grid_c3" data-pageid="{$pageid}" data-v-cell="6">
+                    <DIV edit-form-cell class="clearfix">
+                      {BEGIN cognome_fieldblock}
+                        <DIV class="r-integrated-field form-group clearfix {$fielddispclass_cognome} r-horizontal-field form-horizontal" data-fieldname="cognome" data-signal-error-for="cognome{$id}" data-itemtype="integrated_search_field" data-itemid="integrated_search_field8" {$item_integrated_search_field8} data-pageid="{$pageid}" data-field="cognome">
+                          <LABEL class="r-search-label control-label" for="{$labelfor_cognome}">
+                            *&nbsp;{$label nome_schema_tampone_tutti_ro cognome}
+                            
+                          </label>
+                          <DIV class="r-search-option">
+                            {$searchtype_cognome}
+                          </div>
+                          <DIV class="r-search-field">
+                            {$cognome_editcontrol}
+                          </div>
+                          <DIV class="r-search-field">
+                            {$cognome_editcontrol1}
+                          </div>
+                        </div>
+                      {END cognome_fieldblock}
+                      {BEGIN nome_fieldblock}
+                        <DIV class="r-integrated-field form-group clearfix {$fielddispclass_nome} r-horizontal-field form-horizontal" data-fieldname="nome" data-signal-error-for="nome{$id}" data-itemtype="integrated_search_field" data-itemid="integrated_search_field9" {$item_integrated_search_field9} data-pageid="{$pageid}" data-field="nome">
+                          <LABEL class="r-search-label control-label" for="{$labelfor_nome}">
+                            {$label nome_schema_tampone_tutti_ro nome}
+                          </label>
+                          <DIV class="r-search-option">
+                            {$searchtype_nome}
+                          </div>
+                          <DIV class="r-search-field">
+                            {$nome_editcontrol}
+                          </div>
+                          <DIV class="r-search-field">
+                            {$nome_editcontrol1}
+                          </div>
+                        </div>
+                      {END nome_fieldblock}
+                      {BEGIN codice_fiscale_fieldblock}
+                        <DIV class="r-integrated-field form-group clearfix {$fielddispclass_codice_fiscale} r-horizontal-field form-horizontal" data-fieldname="codice_fiscale" data-signal-error-for="codice_fiscale{$id}" data-itemtype="integrated_search_field" data-itemid="integrated_search_field11" {$item_integrated_search_field11} data-pageid="{$pageid}" data-field="codice_fiscale">
+                          <LABEL class="r-search-label control-label" for="{$labelfor_codice_fiscale}">
+                            {$label nome_schema_tampone_tutti_ro codice_fiscale}
+                          </label>
+                          <DIV class="r-search-option">
+                            {$searchtype_codice_fiscale}
+                          </div>
+                          <DIV class="r-search-field">
+                            {$codice_fiscale_editcontrol}
+                          </div>
+                          <DIV class="r-search-field">
+                            {$codice_fiscale_editcontrol1}
+                          </div>
+                        </div>
+                      {END codice_fiscale_fieldblock}
+                  </td>
+                {END cellblock_grid_c3}
+              </tr>
+            </tbody>
+          </table>
+        {END grid_block}
+        {BEGIN below-grid_block}
+          <DIV class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}" data-v-width="6" data-v-margin="1">
+            <DIV class="row">
+              <DIV data-cellId="below-grid_c1" data-pageid="{$pageid}" {$cell_below-grid_c1} class="col-md-12">
+                <span data-itemtype="search_search" data-itemid="search_search" {$item_search_search} data-pageid="{$pageid}" data-small data-button-item>
+                  <A type="button" title class="btn btn-primary" {$searchbutton_attrs}>
+                    Cerca
+                  </a>
+                </span>
+                <span data-itemtype="custom_button" data-itemid="custom_button" {$item_custom_button} data-pageid="{$pageid}" data-small data-button-item>
+                  <A type="button" title class="btn btn-default" id="Ritorna_alla_lista_tamponi_del_laboratorio" href="javascript:void(0)" typeid="ib">
+                    Ritorna alla lista tamponi del laboratorio
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        {END below-grid_block}
+      </div>
+      {$footer}
+    {END body}
+  </body>
+</html>

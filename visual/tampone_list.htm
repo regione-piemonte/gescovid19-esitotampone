@@ -1,0 +1,1357 @@
+<!doctype html>
+<html  {$html_attrs}>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {$pagetitle}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <base href="{$projectPath}">
+    <link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+    {BEGIN rtlCSS}
+      <link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+    {END rtlCSS}
+    {BEGIN styleCSSFiles}
+      <link REL="stylesheet" href="{$stylepath}" type="text/css">
+    {END styleCSSFiles}
+  </head>
+  <BODY class="{$stylename} function-list" {$bodyattrs}>
+    {BEGIN body}
+      {$header}
+      <style>
+        {$containerCss}
+      </style>
+      <DIV class="r-topbar-page">
+        <DIV data-menu-width="full" data-fixed class="r-topheader" data-resize-name="topbar" data-body-align="left">
+          {BEGIN supertop_block}
+            <NAV class="navbar navbar-default" data-location="supertop" id="form_supertop_{$pageid}" data-makeup="topbar" {$form_supertop} data-pageid="{$pageid}">
+              <SPAN data-cellId="supertop_c1" data-pageid="{$pageid}" class="r-align-left navbar-header" data-itemid="logo" {$item_logo}>
+                {BEGIN logo_block}
+                  <A data-itemtype="logo" data-itemid="logo" {$item_logo} data-pageid="{$pageid}" class="navbar-brand" href="{$home_link}" data-pageid="{$pageid}" {$logo_hiddenattr}>
+                    {$logo}
+                  </A>
+                {END logo_block}
+                <BUTTON data-pageid="1" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target="[data-mobile-controlled]">
+                  <SPAN class="sr-only">
+                    Toggle navigation
+                  </span>
+                  <SPAN class="icon-bar">
+                  </span>
+                </button>
+              </span>
+              <SPAN class="navbar-form r-align-left navbar-collapse" data-cellId="supertop_c1" data-pageid="{$pageid}" data-itemid="snippet" {$item_snippet} data-topcell-item-type="snippet">
+                <span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
+                  {$event nome_schema_soggetto_snippet}
+                </span>
+              </span>
+              <SPAN data-cellId="supertop_c1" data-pageid="{$pageid}" class="r-align-left navbar-collapse" data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}">
+                {$menu main horizontal}
+              </span>
+              <SPAN class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="list_options" {$item_list_options} data-topcell-item-type="list_options">
+                <span data-itemtype="list_options" data-itemid="list_options" {$item_list_options} data-pageid="{$pageid}" data-small data-button-item>
+                  <SPAN class="dropdown">
+                    <BUTTON type="button" title class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <SPAN class="glyphicon glyphicon-cog">
+                      </span>
+                      <SPAN class="caret">
+                      </span>
+                    </button>
+                    <UL class="dropdown-menu">
+                      <li data-itemtype="edit_selected" data-itemid="edit_selected" {$item_edit_selected} data-pageid="{$pageid}" data-small >
+                        <a  href="#" {$editselectedlink_attrs} {$editselectedlink_span}  title="" >
+                          Modifica selezionati
+                        </a>
+                      </li>
+                      {BEGIN exportselected_link}
+                        <li data-itemtype="export_selected" data-itemid="export_selected" {$item_export_selected} data-pageid="{$pageid}" data-small >
+                          <a  href="#" {$exportselectedlink_attrs} {$exportselectedlink_span}  title="" >
+                            Esporta selezionati
+                          </a>
+                        </li>
+                      {END exportselected_link}
+                      <LI role="separator" class="divider">
+                      </li>
+                      <li data-itemtype="advsearch_link" data-itemid="advsearch_link" {$item_advsearch_link} data-pageid="{$pageid}" data-small >
+                        <a   href="tampone_search.php" {$advsearchlink_attrs}  title="" >
+                          Ricerca avanzata
+                        </a>
+                      </li>
+                      {BEGIN searchPanelTopButtons}
+                        <li data-itemtype="show_search_panel" data-itemid="show_search_panel" {$item_show_search_panel} data-pageid="{$pageid}" data-small >
+                          <a  id="showOptPanel{$id}"  title="" >
+                            Mostra il pannello di ricerca
+                          </a>
+                        </li>
+                      {END searchPanelTopButtons}
+                      {BEGIN searchPanelTopButtons}
+                        <li data-itemtype="hide_search_panel" data-itemid="hide_search_panel" {$item_hide_search_panel} data-pageid="{$pageid}" data-small >
+                          <a  id="hideOptPanel{$id}"  title="" >
+                            Nascondi il pannello di ricerca
+                          </a>
+                        </li>
+                      {END searchPanelTopButtons}
+                      <LI role="separator" class="divider">
+                      </li>
+                      {BEGIN export_link}
+                        <li data-itemtype="export" data-itemid="export" {$item_export} data-pageid="{$pageid}" data-small >
+                          <a  href="#" {$exportlink_attrs}  title="" >
+                            Esporta i risultati
+                          </a>
+                        </li>
+                      {END export_link}
+                    </ul>
+                  </span>
+                </span>
+              </span>
+              <SPAN class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="loginform_login" {$item_loginform_login} data-topcell-item-type="loginform_login">
+                {BEGIN guestloginbutton}
+                  <span data-itemtype="loginform_login" data-itemid="loginform_login" {$item_loginform_login} data-pageid="{$pageid}" data-small data-button-item>
+                    <A type="button" title class="btn btn-primary" href="#" {$guestloginlink_attrs}>
+                      Login
+                    </a>
+                  </span>
+                {END guestloginbutton}
+              </span>
+              <SPAN class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="username_button" {$item_username_button} data-topcell-item-type="username_button">
+                {BEGIN loggedas_message}
+                  <span data-itemtype="username_button" data-itemid="username_button" {$item_username_button} data-pageid="{$pageid}" data-small data-button-item>
+                    <SPAN class="dropdown">
+                      <BUTTON type="button" title class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <SPAN class="glyphicon glyphicon-user">
+                        </span>
+                        {$username}
+                        <SPAN class="caret">
+                        </span>
+                      </button>
+                      <UL class="dropdown-menu">
+                        {BEGIN logoutbutton}
+                          <li data-itemtype="logout_link" data-itemid="logout_link" {$item_logout_link} data-pageid="{$pageid}" data-small >
+                            <a  href="#" {$logoutlink_attrs}  title="" >
+                              Log out
+                            </a>
+                          </li>
+                        {END logoutbutton}
+                      </ul>
+                    </span>
+                  </span>
+                {END loggedas_message}
+              </span>
+            </nav>
+          {END supertop_block}
+          {$locking}
+        </div>
+        <DIV data-body-align="left" data-body-width="standard" class="r-body" data-resize-top="topbar">
+          <DIV class="r-top">
+            {BEGIN top_block}
+              <DIV class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="topbar" {$form_top} data-pageid="{$pageid}">
+                <DIV class="row">
+                  <DIV data-cellId="top_c1" data-pageid="{$pageid}" {$cell_top_c1} class="r-ori-vert col-md-12">
+                    {BEGIN breadcrumb}
+                      <OL class="breadcrumb" data-itemtype="breadcrumb" data-itemid="breadcrumb" {$item_breadcrumb} data-pageid="{$pageid}">
+                        <li >
+                          <a href="{$crumb_home_link}">
+                            <SPAN class="glyphicon glyphicon-home">
+                            </span>
+                          </a>
+                          {$crumb_dropdown}
+                        </li>
+                        {BEGIN crumb}
+                          <LI class="{$crumb_item_class}">
+                            {BEGIN crumb_title_link}
+                              <a {$crumb_attrs}>
+                                {$crumb_title}
+                              </a>
+                            {END crumb_title_link}
+                            {BEGIN crumb_title_span}
+                              <span {$crumb_attrs}>
+                                {$crumb_title}
+                              </span>
+                            {END crumb_title_span}
+                            {$crumb_dropdown}
+                          </li>
+                        {END crumb}
+                      </ol>
+                    {END breadcrumb}
+                  </div>
+                </div>
+                <DIV class="row">
+                  <DIV data-cellId="top_c3" data-pageid="{$pageid}" {$cell_top_c3} class="r-ori-vert col-md-12">
+                    {BEGIN mastertable_block}
+                      <div data-itemtype="master_info" data-itemid="master_info" {$item_master_info} data-pageid="{$pageid}">
+                        {$showmasterfile}
+                      </div>
+                    {END mastertable_block}
+                  </div>
+                </div>
+              </div>
+            {END top_block}
+          </div>
+          <DIV class="r-content">
+            <DIV class="r-left" {$blockattr_left} {$form_left}>
+              {BEGIN left_block}
+                <TABLE class="r-fluid r-form" data-location="left" id="form_left_{$pageid}" data-makeup="topbar" {$form_left} data-pageid="{$pageid}">
+                  <tbody>
+                    <tr>
+                      <TD class="r-ori-vert" data-cellId="left_c1" data-pageid="{$pageid}">
+                        <!-- Begin Search panel content -->
+                        <DIV class="searchOptions panel panel-primary searchPanelContainer" {$srchOpt_attrs} data-itemtype="search_panel" data-itemid="search_panel" {$item_search_panel} data-pageid="{$pageid}">
+                          <DIV class="panel-heading">
+                            <DIV class="btn-group" id="addSearchFieldButton{$id}">
+                              <BUTTON id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ricerca
+                                <SPAN class="caret">
+                                </span>
+                              </button>
+                            </div>
+                            <DIV class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+                              <BUTTON type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <SPAN class="glyphicon glyphicon glyphicon-option-vertical">
+                                </span>
+                              </button>
+                              <UL class="dropdown-menu dropdown-left">
+                                <li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}>
+                                  <a>
+                                    Mostra opzioni
+                                  </a>
+                                </li>
+                                <LI role="separator" class="divider">
+                                </li>
+                                <LI class="srchCritTop" style="display: none;">
+                                  <a>
+                                    <input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}>
+                                    <label for="radioAll">
+                                      <SPAN class="glyphicon">
+                                        &nbsp;
+                                      </span>
+                                      Tutte le condizioni
+                                    </label>
+                                  </a>
+                                </li>
+                                <LI class="srchCritTop" style="display: none;">
+                                  <a>
+                                    <input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}>
+                                    <label for="radioAny">
+                                      <SPAN class="glyphicon">
+                                        &nbsp;
+                                      </span>
+                                      Ogni condizione
+                                    </label>
+                                  </a>
+                                </li>
+                                <LI role="separator" class="divider">
+                                </li>
+                                <li>
+                                  <A class="close-button">
+                                    <SPAN class="glyphicon glyphicon-remove">
+                                      &nbsp;
+                                    </span>
+                                    nascondi
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <DIV class="panel-body controlsBlock" {$bottomSearchButt_attrs}>
+                            {BEGIN searchCtrlBlock}
+                              <DIV class="srchPanelRow form-group" {$filterRow_attrs}>
+                                <label>
+                                  {$fLabel}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock}
+                            {BEGIN searchCtrlBlock_criterio_epidemiologico_covid19}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_criterio_epidemiologico_covid19}" {$filterRow_attrs_criterio_epidemiologico_covid19}>
+                                <label>
+                                  {$label nome_schema_tampone criterio_epidemiologico_covid19}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_criterio_epidemiologico_covid19}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_criterio_epidemiologico_covid19}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_criterio_epidemiologico_covid19}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_criterio_epidemiologico_covid19}
+                            {BEGIN searchCtrlBlock_asl_domicilio}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_asl_domicilio}" {$filterRow_attrs_asl_domicilio}>
+                                <label>
+                                  {$label nome_schema_tampone asl_domicilio}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_asl_domicilio}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_asl_domicilio}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_asl_domicilio}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_asl_domicilio}
+                            {BEGIN searchCtrlBlock_asl_residenza}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_asl_residenza}" {$filterRow_attrs_asl_residenza}>
+                                <label>
+                                  {$label nome_schema_tampone asl_residenza}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_asl_residenza}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_asl_residenza}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_asl_residenza}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_asl_residenza}
+                            {BEGIN searchCtrlBlock_contatto_richiedente}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_contatto_richiedente}" {$filterRow_attrs_contatto_richiedente}>
+                                <label>
+                                  {$label nome_schema_tampone contatto_richiedente}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_contatto_richiedente}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_contatto_richiedente}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_contatto_richiedente}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_contatto_richiedente}
+                            {BEGIN searchCtrlBlock_medico_richiedente}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_medico_richiedente}" {$filterRow_attrs_medico_richiedente}>
+                                <label>
+                                  {$label nome_schema_tampone medico_richiedente}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_medico_richiedente}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_medico_richiedente}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_medico_richiedente}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_medico_richiedente}
+                            {BEGIN searchCtrlBlock_data_nascita}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_data_nascita}" {$filterRow_attrs_data_nascita}>
+                                <label>
+                                  {$label nome_schema_tampone data_nascita}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_data_nascita}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_data_nascita}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_data_nascita}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_data_nascita}
+                            {BEGIN searchCtrlBlock_data_test}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_data_test}" {$filterRow_attrs_data_test}>
+                                <label>
+                                  {$label nome_schema_tampone data_test}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_data_test}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_data_test}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_data_test}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_data_test}
+                            {BEGIN searchCtrlBlock_data_inserimento_richiesta}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_data_inserimento_richiesta}" {$filterRow_attrs_data_inserimento_richiesta}>
+                                <label>
+                                  {$label nome_schema_tampone data_inserimento_richiesta}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_data_inserimento_richiesta}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_data_inserimento_richiesta}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_data_inserimento_richiesta}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_data_inserimento_richiesta}
+                            {BEGIN searchCtrlBlock_id_soggetto}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_id_soggetto}" {$filterRow_attrs_id_soggetto}>
+                                <label>
+                                  {$label nome_schema_tampone id_soggetto}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_id_soggetto}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_id_soggetto}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_id_soggetto}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_id_soggetto}
+                            {BEGIN searchCtrlBlock_id_tampone}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_id_tampone}" {$filterRow_attrs_id_tampone}>
+                                <label>
+                                  {$label nome_schema_tampone id_tampone}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_id_tampone}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_id_tampone}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_id_tampone}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_id_tampone}
+                            {BEGIN searchCtrlBlock_id_asr}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_id_asr}" {$filterRow_attrs_id_asr}>
+                                <label>
+                                  {$label nome_schema_tampone id_asr}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_id_asr}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_id_asr}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_id_asr}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_id_asr}
+                            {BEGIN searchCtrlBlock_codice_fiscale}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_codice_fiscale}" {$filterRow_attrs_codice_fiscale}>
+                                <label>
+                                  {$label nome_schema_tampone codice_fiscale}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_codice_fiscale}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_codice_fiscale}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_codice_fiscale}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_codice_fiscale}
+                            {BEGIN searchCtrlBlock_nome}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_nome}" {$filterRow_attrs_nome}>
+                                <label>
+                                  {$label nome_schema_tampone nome}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_nome}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_nome}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_nome}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_nome}
+                            {BEGIN searchCtrlBlock_cognome}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_cognome}" {$filterRow_attrs_cognome}>
+                                <label>
+                                  {$label nome_schema_tampone cognome}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_cognome}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_cognome}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_cognome}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_cognome}
+                            {BEGIN searchCtrlBlock_tampone_autorizzato}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_tampone_autorizzato}" {$filterRow_attrs_tampone_autorizzato}>
+                                <label>
+                                  {$label nome_schema_tampone tampone_autorizzato}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_tampone_autorizzato}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_tampone_autorizzato}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_tampone_autorizzato}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_tampone_autorizzato}
+                            {BEGIN searchCtrlBlock_id_test_covid}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_id_test_covid}" {$filterRow_attrs_id_test_covid}>
+                                <label>
+                                  {$label nome_schema_tampone id_test_covid}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_id_test_covid}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_id_test_covid}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_id_test_covid}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_id_test_covid}
+                            {BEGIN searchCtrlBlock_id_ris_tamp}
+                              <DIV class="form-group srchPanelRow {$filterRow_class_id_ris_tamp}" {$filterRow_attrs_id_ris_tamp}>
+                                <label>
+                                  {$label nome_schema_tampone id_ris_tamp}
+                                </label>
+                                {$delCtrlButt}
+                                <SPAN class="rnr-searchtype">
+                                  {$searchtype_id_ris_tamp}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol_id_ris_tamp}
+                                </span>
+                                <SPAN class="rnr-searchcontrol">
+                                  {$searchcontrol1_id_ris_tamp}
+                                </span>
+                              </div>
+                            {END searchCtrlBlock_id_ris_tamp}
+                          </div>
+                          <DIV class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+                            <BUTTON class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>
+                              Cerca
+                            </button>
+                            <BUTTON class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>
+                              Mostra tutto
+                            </button>
+                          </div>
+                        </div>
+                        <!-- End Search panel content -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              {END left_block}
+            </div>
+            <DIV class="r-data-block" data-body-width="standard">
+              {BEGIN above-grid_block}
+                <DIV class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="topbar" {$form_above-grid} data-pageid="{$pageid}">
+                  <DIV class="row">
+                    <DIV data-cellId="above-grid_c1" data-pageid="{$pageid}" {$cell_above-grid_c1} class="col-md-6">
+                      {BEGIN firstAboveGridCell}
+                        {BEGIN saveall_link}
+                          <span data-itemtype="inline_save_all" data-itemid="inline_save_all" {$item_inline_save_all} data-pageid="{$pageid}" data-small data-button-item>
+                            <A type="button" title class="btn btn-primary" {$savealllink_attrs} {$savealllink_span}>
+                              Salva tutto
+                            </a>
+                          </span>
+                        {END saveall_link}
+                        {BEGIN cancelall_link}
+                          <span data-itemtype="inline_cancel_all" data-itemid="inline_cancel_all" {$item_inline_cancel_all} data-pageid="{$pageid}" data-small data-button-item>
+                            <A type="button" title class="btn btn-default" {$cancelalllink_attrs} {$cancelalllink_span}>
+                              Annulla modifica
+                            </a>
+                          </span>
+                        {END cancelall_link}
+                      {END firstAboveGridCell}
+                    </div>
+                    <DIV data-cellId="above-grid_c2" data-pageid="{$pageid}" {$cell_above-grid_c2} class="r-align-right col-md-6">
+                      <span data-itemtype="details_found" data-itemid="details_found" {$item_details_found} data-pageid="{$pageid}" data-small >
+                        {$details_found_labeldetails_found}
+                      </span>
+                      <span data-itemtype="page_size" data-itemid="page_size" {$item_page_size} data-pageid="{$pageid}" >
+                        {$recsPerPage}
+                      </span>
+                      {BEGIN print_friendly}
+                        <span id="printpanelblock{$id}"  data-pageid="{$pageid}" {$printpanel_hiddenattr} data-itemtype="print_panel" data-itemid="print_panel" {$item_print_panel} data-pageid="{$pageid}">
+                          <BUTTON title="Stampa facile" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <SPAN class="glyphicon glyphicon-print">
+                            </span>
+                            <SPAN class="caret">
+                            </span>
+                          </button>
+                          <UL class="dropdown-menu pull-right">
+                            <LI class="container-fluid">
+                              <div id="print_friendly_scope{$id}">
+                                <DIV class="row">
+                                  <DIV class="col-md-4">
+                                    Scopo:
+                                  </div>
+                                  {BEGIN print_friendly_all}
+                                    <DIV class="col-md-8">
+                                      <label for="printAll{$id}">
+                                        <input type="radio" id="printAll{$id}" data-href="tampone_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">
+                                        Stampa tutte le pagine
+                                      </label>
+                                    </div>
+                                  {END print_friendly_all}
+                                </div>
+                                <DIV class="row">
+                                  <DIV class="col-md-4">
+                                    &nbsp;
+                                  </div>
+                                  <DIV class="col-md-8">
+                                    <label for="printPage{$id}">
+                                      <input name="printScope" id="printPage{$id}" type="radio" checked data-href="tampone_print.php?{$crosstable_attrs}">
+                                      Stampa questa pagina
+                                    </label>
+                                  </div>
+                                </div>
+                                <DIV class="row">
+                                  <DIV class="col-md-4">
+                                    &nbsp;
+                                  </div>
+                                  <DIV class="col-md-8">
+                                    <label style="color: gray;" for="printSelection{$id}">
+                                      <input name="printScope" disabled="disabled" id="printSelection{$id}" type="radio">
+                                      Stampa il selezionato
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <LI class="divider" role="separator">
+                            </li>
+                            <LI class="container-fluid">
+                              {BEGIN print_details}
+                                <div>
+                                  <label for="printDetailsToggler{$id}">
+                                    <input type="checkbox" id="printDetailsToggler{$id}">
+                                    Stampa i dettagli
+                                  </label>
+                                  <div  id="printdetailstables{$id}" style="display:none;">
+                                    {BEGIN print_details_nome_schema_soggetto}
+                                      <div>
+                                        <label for="printDetailsnome_schema_soggetto{$id}">
+                                          <input type="checkbox" value="nome_schema_soggetto" id="printDetailsnome_schema_soggetto{$id}" checked>
+                                          Paziente
+                                        </label>
+                                      </div>
+                                    {END print_details_nome_schema_soggetto}
+                                  </div>
+                                </div>
+                              {END print_details}
+                            </li>
+                            <LI class="divider" role="separator">
+                            </li>
+                            <LI class="container-fluid">
+                              <div>
+                                <label for="printPerPage{$id}">
+                                  Record per pagina
+                                </label>
+                                <INPUT type="number" id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">
+                              </div>
+                            </li>
+                            <LI class="divider" role="separator">
+                            </li>
+                            <LI class="container-fluid text-center">
+                              <span data-itemtype="print_button" data-itemid="print_button" {$item_print_button} data-pageid="{$pageid}" data-small data-button-item>
+                                <A type="button" title class="btn btn-primary" id="print_friendly_button{$id}">
+                                  Stampa
+                                </a>
+                              </span>
+                            </li>
+                          </ul>
+                        </span>
+                      {END print_friendly}
+                    </div>
+                  </div>
+                  <DIV class="row">
+                    <DIV data-cellId="above-grid_c3" data-pageid="{$pageid}" {$cell_above-grid_c3} class="col-md-6" style='width:600px'>
+                      <span data-itemtype="custom_button" data-itemid="custom_button" {$item_custom_button} data-pageid="{$pageid}" data-page="tampone_list" data-small data-button-item>
+                        <A type="button" title="Lista tamponi da lavorare" class="btn btn-default" id="Tamponi_in_corso" href="javascript:void(0)" typeid="ib">
+                          <SPAN class="glyphicon glyphicon-zoom-in">
+                          </span>
+                          Tamponi da Lavorare
+                        </a>
+                      </span>
+                      <span data-itemtype="custom_button" data-itemid="custom_button1" {$item_custom_button1} data-pageid="{$pageid}" data-page="tampone_list" data-small data-button-item>
+                        <A type="button" title class="btn btn-default" id="Positivo___Oggi" href="javascript:void(0)" typeid="ib">
+                          <SPAN class="glyphicon glyphicon-plus-sign">
+                          </span>
+                          Positivo / Oggi
+                        </a>
+                      </span>
+                      <span data-itemtype="custom_button" data-itemid="custom_button2" {$item_custom_button2} data-pageid="{$pageid}" data-page="tampone_list" data-small data-button-item>
+                        <A type="button" title class="btn btn-default" id="Negativo___Oggi" href="javascript:void(0)" typeid="ib">
+                          <SPAN class="glyphicon glyphicon-minus-sign">
+                          </span>
+                          Negativo / Oggi
+                        </a>
+                      </span>
+                    </div>
+                    <DIV data-cellId="above-grid_c4" data-pageid="{$pageid}" {$cell_above-grid_c4} class="r-align-right r-ori-vert col-md-6">
+                    </div>
+                  </div>
+                </div>
+              {END above-grid_block}
+              <DIV class="r-grid">
+                {BEGIN grid_block}
+                  {BEGIN grid_tabs}
+                    <UL class="nav nav-tabs bsgrid_tabs">
+                      {$grid_tabs_content}
+                    </ul>
+                  {END grid_tabs}
+                  {BEGIN message_block}
+                    <DIV data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>
+                      {$message}
+                    </div>
+                  {END message_block}
+                  <style>
+                    @media screen and (max-width: 767px) {
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_tampone"]:before {
+                    content: "{$label nome_schema_tampone id_tampone}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_soggetto"]:before {
+                    content: "{$label nome_schema_tampone id_soggetto}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_laboratorio"]:before {
+                    content: "{$label nome_schema_tampone id_laboratorio}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="criterio_epidemiologico_covid19"]:before {
+                    content: "{$label nome_schema_tampone criterio_epidemiologico_covid19}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_test_covid"]:before {
+                    content: "{$label nome_schema_tampone id_test_covid}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_ris_tamp"]:before {
+                    content: "{$label nome_schema_tampone id_ris_tamp}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="tampone_autorizzato"]:before {
+                    content: "{$label nome_schema_tampone tampone_autorizzato}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="cognome"]:before {
+                    content: "{$label nome_schema_tampone cognome}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="nome"]:before {
+                    content: "{$label nome_schema_tampone nome}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="codice_fiscale"]:before {
+                    content: "{$label nome_schema_tampone codice_fiscale}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_asr"]:before {
+                    content: "{$label nome_schema_tampone id_asr}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="data_inserimento_richiesta"]:before {
+                    content: "{$label nome_schema_tampone data_inserimento_richiesta}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="data_test"]:before {
+                    content: "{$label nome_schema_tampone data_test}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="data_nascita"]:before {
+                    content: "{$label nome_schema_tampone data_nascita}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="data_ultima_modifica"]:before {
+                    content: "{$label nome_schema_tampone data_ultima_modifica}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="utente_ultima_modifica"]:before {
+                    content: "{$label nome_schema_tampone utente_ultima_modifica}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="medico_richiedente"]:before {
+                    content: "{$label nome_schema_tampone medico_richiedente}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="contatto_richiedente"]:before {
+                    content: "{$label nome_schema_tampone contatto_richiedente}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="asl_residenza"]:before {
+                    content: "{$label nome_schema_tampone asl_residenza}";
+                    }
+                    [data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="asl_domicilio"]:before {
+                    content: "{$label nome_schema_tampone asl_domicilio}";
+                    }
+                    }
+                  </style>
+                  <TABLE data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" class="table {$grid_classes} r-flexgrid rnr-b-grid rnr-gridtable" cellpadding="0" data-body-height="2">
+                    <thead>
+                      {BEGIN grid_header}
+                        <TR {$rowattrs} {$row_grid_0} class="{$rowclass} {$gridHeader_class} r-gridrow">
+                          {BEGIN cellblock_grid_headcell_icons}
+                            <TH {$cell_grid_headcell_icons} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_icons" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list" data-control-cell>
+                            </th>
+                          {END cellblock_grid_headcell_icons}
+                          {BEGIN cellblock_grid_headcell_checkbox}
+                            <TH {$cell_grid_headcell_checkbox} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list" data-checkbox-cell>
+                              {BEGIN checkbox_column}
+                                <span data-itemtype="grid_checkbox_head" data-itemid="grid_checkbox_head" {$item_grid_checkbox_head} data-pageid="{$pageid}" data-record-id="{$recId}" >
+                                  <input type="checkbox" {$checkboxheader_attrs}>
+                                </span>
+                              {END checkbox_column}
+                            </th>
+                          {END cellblock_grid_headcell_checkbox}
+                          {BEGIN cellblock_grid_headcell_details}
+                            <TH {$cell_grid_headcell_details} {$recordattrs} class="r-ori-vert" data-cellId="grid_headcell_details" data-pageid="{$pageid}" data-record-id="{$recId}">
+                            </th>
+                          {END cellblock_grid_headcell_details}
+                          {BEGIN cellblock_grid_headcell_field}
+                            <TH {$cell_grid_headcell_field} {$recordattrs} class="r-ori-vert {$id_asr_class}" data-field="id_asr" data-cellId="grid_headcell_field" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_asr_fieldheadercolumn}
+                                {BEGIN id_asr_fieldheader}
+                                  <SPAN {$id_asr_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_asr">
+                                    {$label nome_schema_tampone id_asr}
+                                    {$arrow_icon_id_asr}
+                                  </SPAN>
+                                {END id_asr_fieldheader}
+                              {END id_asr_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field}
+                          {BEGIN cellblock_grid_headcell_field1}
+                            <TH {$cell_grid_headcell_field1} {$recordattrs} class="r-ori-vert {$id_tampone_class}" data-field="id_tampone" data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_tampone_fieldheadercolumn}
+                                {BEGIN id_tampone_fieldheader}
+                                  <SPAN {$id_tampone_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_tampone">
+                                    {$label nome_schema_tampone id_tampone}
+                                    {$arrow_icon_id_tampone}
+                                  </SPAN>
+                                {END id_tampone_fieldheader}
+                              {END id_tampone_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field1}
+                          {BEGIN cellblock_grid_headcell_field2}
+                            <TH {$cell_grid_headcell_field2} {$recordattrs} class="r-ori-vert {$id_ris_tamp_class}" data-field="id_ris_tamp" data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_ris_tamp_fieldheadercolumn}
+                                {BEGIN id_ris_tamp_fieldheader}
+                                  <SPAN {$id_ris_tamp_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field18" {$item_simple_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_ris_tamp">
+                                    {$label nome_schema_tampone id_ris_tamp}
+                                    {$arrow_icon_id_ris_tamp}
+                                  </SPAN>
+                                {END id_ris_tamp_fieldheader}
+                              {END id_ris_tamp_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field2}
+                          {BEGIN cellblock_grid_headcell_field3}
+                            <TH {$cell_grid_headcell_field3} {$recordattrs} class="r-ori-vert {$data_test_class}" data-field="data_test" data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                              {BEGIN data_test_fieldheadercolumn}
+                                {BEGIN data_test_fieldheader}
+                                  <SPAN {$data_test_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field19" {$item_simple_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_test">
+                                    {$label nome_schema_tampone data_test}
+                                    {$arrow_icon_data_test}
+                                  </SPAN>
+                                {END data_test_fieldheader}
+                              {END data_test_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field3}
+                          {BEGIN cellblock_grid_headcell_field4}
+                            <TH {$cell_grid_headcell_field4} {$recordattrs} class="r-ori-vert {$cognome_class}" data-field="cognome" data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN cognome_fieldheadercolumn}
+                                {BEGIN cognome_fieldheader}
+                                  <SPAN {$cognome_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field20" {$item_simple_grid_field20} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="cognome">
+                                    {$label nome_schema_tampone cognome}
+                                    {$arrow_icon_cognome}
+                                  </SPAN>
+                                {END cognome_fieldheader}
+                              {END cognome_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field4}
+                          {BEGIN cellblock_grid_headcell_field5}
+                            <TH {$cell_grid_headcell_field5} {$recordattrs} class="r-ori-vert {$nome_class}" data-field="nome" data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN nome_fieldheadercolumn}
+                                {BEGIN nome_fieldheader}
+                                  <SPAN {$nome_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field21" {$item_simple_grid_field21} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="nome">
+                                    {$label nome_schema_tampone nome}
+                                    {$arrow_icon_nome}
+                                  </SPAN>
+                                {END nome_fieldheader}
+                              {END nome_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field5}
+                          {BEGIN cellblock_grid_headcell_field6}
+                            <TH {$cell_grid_headcell_field6} {$recordattrs} class="r-ori-vert {$data_nascita_class}" data-field="data_nascita" data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN data_nascita_fieldheadercolumn}
+                                {BEGIN data_nascita_fieldheader}
+                                  <SPAN {$data_nascita_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field22" {$item_simple_grid_field22} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_nascita">
+                                    {$label nome_schema_tampone data_nascita}
+                                    {$arrow_icon_data_nascita}
+                                  </SPAN>
+                                {END data_nascita_fieldheader}
+                              {END data_nascita_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field6}
+                          {BEGIN cellblock_grid_headcell_field7}
+                            <TH {$cell_grid_headcell_field7} {$recordattrs} class="r-ori-vert {$id_soggetto_class}" data-field="id_soggetto" data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_soggetto_fieldheadercolumn}
+                                {BEGIN id_soggetto_fieldheader}
+                                  <SPAN {$id_soggetto_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field23" {$item_simple_grid_field23} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_soggetto">
+                                    {$label nome_schema_tampone id_soggetto}
+                                    {$arrow_icon_id_soggetto}
+                                  </SPAN>
+                                {END id_soggetto_fieldheader}
+                              {END id_soggetto_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field7}
+                          {BEGIN cellblock_grid_headcell_field8}
+                            <TH {$cell_grid_headcell_field8} {$recordattrs} class="r-ori-vert {$data_inserimento_richiesta_class}" data-field="data_inserimento_richiesta" data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN data_inserimento_richiesta_fieldheadercolumn}
+                                {BEGIN data_inserimento_richiesta_fieldheader}
+                                  <SPAN {$data_inserimento_richiesta_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field24" {$item_simple_grid_field24} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_inserimento_richiesta">
+                                    {$label nome_schema_tampone data_inserimento_richiesta}
+                                    {$arrow_icon_data_inserimento_richiesta}
+                                  </SPAN>
+                                {END data_inserimento_richiesta_fieldheader}
+                              {END data_inserimento_richiesta_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field8}
+                          {BEGIN cellblock_grid_headcell_field9}
+                            <TH {$cell_grid_headcell_field9} {$recordattrs} class="r-ori-vert {$codice_fiscale_class}" data-field="codice_fiscale" data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN codice_fiscale_fieldheadercolumn}
+                                {BEGIN codice_fiscale_fieldheader}
+                                  <SPAN {$codice_fiscale_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field25" {$item_simple_grid_field25} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="codice_fiscale">
+                                    {$label nome_schema_tampone codice_fiscale}
+                                    {$arrow_icon_codice_fiscale}
+                                  </SPAN>
+                                {END codice_fiscale_fieldheader}
+                              {END codice_fiscale_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field9}
+                          {BEGIN cellblock_grid_headcell_field10}
+                            <TH {$cell_grid_headcell_field10} {$recordattrs} class="r-ori-vert {$criterio_epidemiologico_covid19_class}" data-field="criterio_epidemiologico_covid19" data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN criterio_epidemiologico_covid19_fieldheadercolumn}
+                                {BEGIN criterio_epidemiologico_covid19_fieldheader}
+                                  <SPAN {$criterio_epidemiologico_covid19_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field26" {$item_simple_grid_field26} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="criterio_epidemiologico_covid19">
+                                    {$label nome_schema_tampone criterio_epidemiologico_covid19}
+                                    {$arrow_icon_criterio_epidemiologico_covid19}
+                                  </SPAN>
+                                {END criterio_epidemiologico_covid19_fieldheader}
+                              {END criterio_epidemiologico_covid19_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field10}
+                          {BEGIN cellblock_grid_headcell_field11}
+                            <TH {$cell_grid_headcell_field11} {$recordattrs} class="r-ori-vert {$id_test_covid_class}" data-field="id_test_covid" data-cellId="grid_headcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_test_covid_fieldheadercolumn}
+                                {BEGIN id_test_covid_fieldheader}
+                                  <SPAN {$id_test_covid_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field27" {$item_simple_grid_field27} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_test_covid">
+                                    {$label nome_schema_tampone id_test_covid}
+                                    {$arrow_icon_id_test_covid}
+                                  </SPAN>
+                                {END id_test_covid_fieldheader}
+                              {END id_test_covid_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field11}
+                          {BEGIN cellblock_grid_headcell_field12}
+                            <TH {$cell_grid_headcell_field12} {$recordattrs} class="r-ori-vert {$medico_richiedente_class}" data-field="medico_richiedente" data-cellId="grid_headcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN medico_richiedente_fieldheadercolumn}
+                                {BEGIN medico_richiedente_fieldheader}
+                                  <SPAN {$medico_richiedente_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field28" {$item_simple_grid_field28} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="medico_richiedente">
+                                    {$label nome_schema_tampone medico_richiedente}
+                                    {$arrow_icon_medico_richiedente}
+                                  </SPAN>
+                                {END medico_richiedente_fieldheader}
+                              {END medico_richiedente_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field12}
+                          {BEGIN cellblock_grid_headcell_field13}
+                            <TH {$cell_grid_headcell_field13} {$recordattrs} class="r-ori-vert {$contatto_richiedente_class}" data-field="contatto_richiedente" data-cellId="grid_headcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN contatto_richiedente_fieldheadercolumn}
+                                {BEGIN contatto_richiedente_fieldheader}
+                                  <SPAN {$contatto_richiedente_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field29" {$item_simple_grid_field29} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="contatto_richiedente">
+                                    {$label nome_schema_tampone contatto_richiedente}
+                                    {$arrow_icon_contatto_richiedente}
+                                  </SPAN>
+                                {END contatto_richiedente_fieldheader}
+                              {END contatto_richiedente_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field13}
+                          {BEGIN cellblock_grid_headcell_field14}
+                            <TH {$cell_grid_headcell_field14} {$recordattrs} class="r-ori-vert {$asl_residenza_class}" data-field="asl_residenza" data-cellId="grid_headcell_field14" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_residenza_fieldheadercolumn}
+                                {BEGIN asl_residenza_fieldheader}
+                                  <SPAN {$asl_residenza_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field30" {$item_simple_grid_field30} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_residenza">
+                                    {$label nome_schema_tampone asl_residenza}
+                                    {$arrow_icon_asl_residenza}
+                                  </SPAN>
+                                {END asl_residenza_fieldheader}
+                              {END asl_residenza_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field14}
+                          {BEGIN cellblock_grid_headcell_field15}
+                            <TH {$cell_grid_headcell_field15} {$recordattrs} class="r-ori-vert {$asl_domicilio_class}" data-field="asl_domicilio" data-cellId="grid_headcell_field15" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_domicilio_fieldheadercolumn}
+                                {BEGIN asl_domicilio_fieldheader}
+                                  <SPAN {$asl_domicilio_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field31" {$item_simple_grid_field31} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_domicilio">
+                                    {$label nome_schema_tampone asl_domicilio}
+                                    {$arrow_icon_asl_domicilio}
+                                  </SPAN>
+                                {END asl_domicilio_fieldheader}
+                              {END asl_domicilio_fieldheadercolumn}
+                            </th>
+                          {END cellblock_grid_headcell_field15}
+                        </tr>
+                      {END grid_header}
+                    </thead>
+                    <tbody>
+                      {BEGIN grid_row}
+                        <TR {$rowattrs} {$row_grid_1} class="{$rowclass} r-gridrow">
+                          {BEGIN cellblock_grid_cell_icons}
+                            <TD {$cell_grid_cell_icons} {$recordattrs} class="
+" data-cellId="grid_cell_icons" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list" data-control-cell>
+                              {BEGIN edit_column}
+                                {BEGIN edit_link}
+                                  <span data-itemtype="grid_edit" data-itemid="grid_edit" {$item_grid_edit} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+                                    <A type="button" title="Modifica" class="btn-link glyphicon glyphicon-pencil" href="tampone_edit.php?{$editlink}" {$editlink_attrs} title="Modifica">
+                                    </a>
+                                  </span>
+                                {END edit_link}
+                              {END edit_column}
+                              {BEGIN inlineedit_column}
+                                {BEGIN inlineedit_link}
+                                  <span data-itemtype="grid_inline_edit" data-itemid="grid_inline_edit" {$item_grid_inline_edit} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+                                    <A type="button" title="Modifica inline" class="btn-link glyphicon glyphicon-edit" {$inlineeditlink_attrs} title="Modifica inline">
+                                    </a>
+                                  </span>
+                                {END inlineedit_link}
+                              {END inlineedit_column}
+                              {BEGIN inline_save}
+                                <span data-itemtype="grid_inline_save" data-itemid="grid_inline_save" {$item_grid_inline_save} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+                                  <A type="button" title="Salva" class="btn-link glyphicon glyphicon-ok" {$inlinesavelink_attrs} title="Salva">
+                                  </a>
+                                </span>
+                              {END inline_save}
+                              {BEGIN inline_cancel}
+                                <span data-itemtype="grid_inline_cancel" data-itemid="grid_inline_cancel" {$item_grid_inline_cancel} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+                                  <A type="button" title="Cancella" class="btn-link glyphicon glyphicon-remove" {$inlinerevertlink_attrs} title="Cancella">
+                                  </a>
+                                </span>
+                              {END inline_cancel}
+                              {BEGIN view_column}
+                                {BEGIN view_link}
+                                  <span data-itemtype="grid_view" data-itemid="grid_view" {$item_grid_view} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+                                    <A type="button" title="Guarda il record" class="btn-link glyphicon glyphicon-search" href="tampone_view.php?{$editlink}" {$viewlink_attrs} title="Dettagli">
+                                    </a>
+                                  </span>
+                                {END view_link}
+                              {END view_column}
+                            </td>
+                          {END cellblock_grid_cell_icons}
+                          {BEGIN cellblock_grid_cell_checkbox}
+                            <TD {$cell_grid_cell_checkbox} {$recordattrs} class="r-ori-vert" data-cellId="grid_cell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}" data-control-cell data-checkbox-cell>
+                              {BEGIN checkbox_column}
+                                <span data-itemtype="grid_checkbox" data-itemid="grid_checkbox" {$item_grid_checkbox} data-pageid="{$pageid}" data-record-id="{$recId}" >
+                                  <input type="checkbox" {$checkbox_attrs}>
+                                </span>
+                              {END checkbox_column}
+                            </td>
+                          {END cellblock_grid_cell_checkbox}
+                          {BEGIN cellblock_grid_cell_details}
+                            <TD {$cell_grid_cell_details} {$recordattrs} class="
+" data-cellId="grid_cell_details" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list" data-control-cell>
+                              {BEGIN dtables_link}
+                                <A data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-record-id="{$recId}" {$dtables_link_attrs} class="{$dtables_link_class}" title="Mostra i dettagli">
+                                  <SPAN class="glyphicon glyphicon-th-list">
+                                  </span>
+                                </a>
+                              {END dtables_link}
+                              {BEGIN nome_schema_soggetto_dtable_link}
+                                <span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
+                                  <A {$nome_schema_soggetto_link_attrs} data-short-details="nome_schema_soggetto" class="{$nome_schema_soggetto_dlink_class}" title="{$caption nome_schema_soggetto }">
+                                  </a>
+                                </span>
+                              {END nome_schema_soggetto_dtable_link}
+                            </td>
+                          {END cellblock_grid_cell_details}
+                          {BEGIN cellblock_grid_cell_field}
+                            <TD {$cell_grid_cell_field} {$recordattrs} class="r-ori-vert {$id_asr_class}" data-field="id_asr" data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_asr_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_asr" data-default-width >
+                                  {$id_asr_value}
+                                </span>
+                              {END id_asr_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field}
+                          {BEGIN cellblock_grid_cell_field1}
+                            <TD {$cell_grid_cell_field1} {$recordattrs} class="r-ori-vert {$id_tampone_class}" data-field="id_tampone" data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_tampone_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_tampone" data-default-width >
+                                  {$id_tampone_value}
+                                </span>
+                              {END id_tampone_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field1}
+                          {BEGIN cellblock_grid_cell_field2}
+                            <TD {$cell_grid_cell_field2} {$recordattrs} class="r-ori-vert {$id_ris_tamp_class}" data-field="id_ris_tamp" data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_ris_tamp_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_ris_tamp" data-default-width >
+                                  {$id_ris_tamp_value}
+                                </span>
+                              {END id_ris_tamp_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field2}
+                          {BEGIN cellblock_grid_cell_field3}
+                            <TD {$cell_grid_cell_field3} {$recordattrs} class="r-ori-vert {$data_test_class}" data-field="data_test" data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN data_test_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_test" data-default-width >
+                                  {$data_test_value}
+                                </span>
+                              {END data_test_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field3}
+                          {BEGIN cellblock_grid_cell_field4}
+                            <TD {$cell_grid_cell_field4} {$recordattrs} class="r-ori-vert {$cognome_class}" data-field="cognome" data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN cognome_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="cognome" data-default-width >
+                                  {$cognome_value}
+                                </span>
+                              {END cognome_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field4}
+                          {BEGIN cellblock_grid_cell_field5}
+                            <TD {$cell_grid_cell_field5} {$recordattrs} class="r-ori-vert {$nome_class}" data-field="nome" data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN nome_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field1" {$item_simple_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="nome" data-default-width >
+                                  {$nome_value}
+                                </span>
+                              {END nome_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field5}
+                          {BEGIN cellblock_grid_cell_field6}
+                            <TD {$cell_grid_cell_field6} {$recordattrs} class="r-ori-vert {$data_nascita_class}" data-field="data_nascita" data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN data_nascita_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_nascita" data-default-width >
+                                  {$data_nascita_value}
+                                </span>
+                              {END data_nascita_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field6}
+                          {BEGIN cellblock_grid_cell_field7}
+                            <TD {$cell_grid_cell_field7} {$recordattrs} class="r-ori-vert {$id_soggetto_class}" data-field="id_soggetto" data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_soggetto_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_soggetto" data-default-width >
+                                  {$id_soggetto_value}
+                                </span>
+                              {END id_soggetto_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field7}
+                          {BEGIN cellblock_grid_cell_field8}
+                            <TD {$cell_grid_cell_field8} {$recordattrs} class="r-ori-vert {$data_inserimento_richiesta_class}" data-field="data_inserimento_richiesta" data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN data_inserimento_richiesta_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="data_inserimento_richiesta" data-default-width >
+                                  {$data_inserimento_richiesta_value}
+                                </span>
+                              {END data_inserimento_richiesta_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field8}
+                          {BEGIN cellblock_grid_cell_field9}
+                            <TD {$cell_grid_cell_field9} {$recordattrs} class="r-ori-vert {$codice_fiscale_class}" data-field="codice_fiscale" data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN codice_fiscale_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="codice_fiscale" data-default-width >
+                                  {$codice_fiscale_value}
+                                </span>
+                              {END codice_fiscale_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field9}
+                          {BEGIN cellblock_grid_cell_field10}
+                            <TD {$cell_grid_cell_field10} {$recordattrs} class="r-ori-vert {$criterio_epidemiologico_covid19_class}" data-field="criterio_epidemiologico_covid19" data-cellId="grid_cell_field10" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN criterio_epidemiologico_covid19_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field3" {$item_simple_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="criterio_epidemiologico_covid19" data-default-width >
+                                  {$criterio_epidemiologico_covid19_value}
+                                </span>
+                              {END criterio_epidemiologico_covid19_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field10}
+                          {BEGIN cellblock_grid_cell_field11}
+                            <TD {$cell_grid_cell_field11} {$recordattrs} class="r-ori-vert {$id_test_covid_class}" data-field="id_test_covid" data-cellId="grid_cell_field11" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN id_test_covid_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field4" {$item_simple_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_test_covid" data-default-width >
+                                  {$id_test_covid_value}
+                                </span>
+                              {END id_test_covid_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field11}
+                          {BEGIN cellblock_grid_cell_field12}
+                            <TD {$cell_grid_cell_field12} {$recordattrs} class="r-ori-vert {$medico_richiedente_class}" data-field="medico_richiedente" data-cellId="grid_cell_field12" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN medico_richiedente_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field13" {$item_simple_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="medico_richiedente" data-default-width >
+                                  {$medico_richiedente_value}
+                                </span>
+                              {END medico_richiedente_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field12}
+                          {BEGIN cellblock_grid_cell_field13}
+                            <TD {$cell_grid_cell_field13} {$recordattrs} class="r-ori-vert {$contatto_richiedente_class}" data-field="contatto_richiedente" data-cellId="grid_cell_field13" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN contatto_richiedente_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="contatto_richiedente" data-default-width >
+                                  {$contatto_richiedente_value}
+                                </span>
+                              {END contatto_richiedente_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field13}
+                          {BEGIN cellblock_grid_cell_field14}
+                            <TD {$cell_grid_cell_field14} {$recordattrs} class="r-ori-vert {$asl_residenza_class}" data-field="asl_residenza" data-cellId="grid_cell_field14" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_residenza_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_residenza" data-default-width >
+                                  {$asl_residenza_value}
+                                </span>
+                              {END asl_residenza_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field14}
+                          {BEGIN cellblock_grid_cell_field15}
+                            <TD {$cell_grid_cell_field15} {$recordattrs} class="r-ori-vert {$asl_domicilio_class}" data-field="asl_domicilio" data-cellId="grid_cell_field15" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              {BEGIN asl_domicilio_fieldcolumn}
+                                <span data-itemtype="grid_field" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="asl_domicilio" data-default-width >
+                                  {$asl_domicilio_value}
+                                </span>
+                              {END asl_domicilio_fieldcolumn}
+                            </td>
+                          {END cellblock_grid_cell_field15}
+                        </tr>
+                        <TR {$rowattrs} {$row_grid_2} class="{$rowclass}">
+                          {BEGIN cellblock_grid_cell_dpreview}
+                            <TD {$cell_grid_cell_dpreview} {$recordattrs} class="r-ori-vert {$asl_domicilio_class}" data-field="asl_domicilio" data-cellId="grid_cell_dpreview" data-pageid="{$pageid}" data-record-id="{$recId}">
+                              <div data-itemtype="details_preview" data-itemid="details_preview" {$item_details_preview} data-pageid="{$pageid}" data-record-id="{$recId}" 
+	data-orders="nome_schema_soggetto"
+			data-details-nome_schema_soggetto	>
+                                <span data-details-inside data-short-table="nome_schema_soggetto">
+                                </span>
+                                <div data-details-preview>
+                                </div>
+                              </div>
+                            </td>
+                          {END cellblock_grid_cell_dpreview}
+                        </tr>
+                      {END grid_row}
+                    </tbody>
+                    <tfoot>
+                      <TR {$rowattrs} {$row_grid_3} class="{$rowclass} {$gridFooter_class} r-gridrow">
+                        {BEGIN cellblock_grid_footcell_icons}
+                          <TD {$cell_grid_footcell_icons} {$recordattrs} class="r-ori-vert" data-cellId="grid_footcell_icons" data-pageid="{$pageid}" data-record-id="{$recId}">
+                          </td>
+                        {END cellblock_grid_footcell_icons}
+                        {BEGIN cellblock_grid_footcell_checkbox}
+                          <TD {$cell_grid_footcell_checkbox} {$recordattrs} class="r-ori-vert" data-cellId="grid_footcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}">
+                          </td>
+                        {END cellblock_grid_footcell_checkbox}
+                        {BEGIN cellblock_grid_footcell_details}
+                          <TD {$cell_grid_footcell_details} {$recordattrs} class="r-ori-vert" data-cellId="grid_footcell_details" data-pageid="{$pageid}" data-record-id="{$recId}">
+                          </td>
+                        {END cellblock_grid_footcell_details}
+                        {BEGIN cellblock_grid_footcell_field}
+                          <TD {$cell_grid_footcell_field} {$recordattrs} class="r-ori-vert {$id_asr_class}" data-field="id_asr" data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field}
+                        {BEGIN cellblock_grid_footcell_field1}
+                          <TD {$cell_grid_footcell_field1} {$recordattrs} class="r-ori-vert {$id_tampone_class}" data-field="id_tampone" data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field1}
+                        {BEGIN cellblock_grid_footcell_field2}
+                          <TD {$cell_grid_footcell_field2} {$recordattrs} class="r-ori-vert {$id_ris_tamp_class}" data-field="id_ris_tamp" data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field2}
+                        {BEGIN cellblock_grid_footcell_field3}
+                          <TD {$cell_grid_footcell_field3} {$recordattrs} class="r-ori-vert {$data_test_class}" data-field="data_test" data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field3}
+                        {BEGIN cellblock_grid_footcell_field4}
+                          <TD {$cell_grid_footcell_field4} {$recordattrs} class="r-ori-vert {$cognome_class}" data-field="cognome" data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field4}
+                        {BEGIN cellblock_grid_footcell_field5}
+                          <TD {$cell_grid_footcell_field5} {$recordattrs} class="r-ori-vert {$nome_class}" data-field="nome" data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field5}
+                        {BEGIN cellblock_grid_footcell_field6}
+                          <TD {$cell_grid_footcell_field6} {$recordattrs} class="r-ori-vert {$data_nascita_class}" data-field="data_nascita" data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field6}
+                        {BEGIN cellblock_grid_footcell_field7}
+                          <TD {$cell_grid_footcell_field7} {$recordattrs} class="r-ori-vert {$id_soggetto_class}" data-field="id_soggetto" data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field7}
+                        {BEGIN cellblock_grid_footcell_field8}
+                          <TD {$cell_grid_footcell_field8} {$recordattrs} class="r-ori-vert {$data_inserimento_richiesta_class}" data-field="data_inserimento_richiesta" data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field8}
+                        {BEGIN cellblock_grid_footcell_field9}
+                          <TD {$cell_grid_footcell_field9} {$recordattrs} class="r-ori-vert {$codice_fiscale_class}" data-field="codice_fiscale" data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field9}
+                        {BEGIN cellblock_grid_footcell_field10}
+                          <TD {$cell_grid_footcell_field10} {$recordattrs} class="r-ori-vert {$criterio_epidemiologico_covid19_class}" data-field="criterio_epidemiologico_covid19" data-cellId="grid_footcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field10}
+                        {BEGIN cellblock_grid_footcell_field11}
+                          <TD {$cell_grid_footcell_field11} {$recordattrs} class="r-ori-vert {$id_test_covid_class}" data-field="id_test_covid" data-cellId="grid_footcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field11}
+                        {BEGIN cellblock_grid_footcell_field12}
+                          <TD {$cell_grid_footcell_field12} {$recordattrs} class="r-ori-vert {$medico_richiedente_class}" data-field="medico_richiedente" data-cellId="grid_footcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field12}
+                        {BEGIN cellblock_grid_footcell_field13}
+                          <TD {$cell_grid_footcell_field13} {$recordattrs} class="r-ori-vert {$contatto_richiedente_class}" data-field="contatto_richiedente" data-cellId="grid_footcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field13}
+                        {BEGIN cellblock_grid_footcell_field14}
+                          <TD {$cell_grid_footcell_field14} {$recordattrs} class="r-ori-vert {$asl_residenza_class}" data-field="asl_residenza" data-cellId="grid_footcell_field14" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field14}
+                        {BEGIN cellblock_grid_footcell_field15}
+                          <TD {$cell_grid_footcell_field15} {$recordattrs} class="r-ori-vert {$asl_domicilio_class}" data-field="asl_domicilio" data-cellId="grid_footcell_field15" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tampone_list">
+                          </td>
+                        {END cellblock_grid_footcell_field15}
+                      </tr>
+                    </tfoot>
+                  </table>
+                {END grid_block}
+              </div>
+              {BEGIN below-grid_block}
+                <DIV class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="topbar" {$form_below-grid} data-pageid="{$pageid}">
+                  <DIV class="row">
+                    <DIV data-cellId="below-grid_c1" data-pageid="{$pageid}" {$cell_below-grid_c1} class="r-align-center r-ori-vert col-md-12">
+                      {BEGIN pagination_block}
+                        <span data-itemtype="pagination" data-itemid="pagination" {$item_pagination} data-pageid="{$pageid}" >
+                          {$pagination}
+                        </span>
+                      {END pagination_block}
+                    </div>
+                  </div>
+                </div>
+              {END below-grid_block}
+            </div>
+          </div>
+        </div>
+      </div>
+      {$footer}
+    {END body}
+  </body>
+</html>
